@@ -1,19 +1,15 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 
 for user in `awk -F: '($3 < 500) {print $1 }' /etc/passwd`; do
 
-if [ $user != "root" ]
+   if [ $user != "root" ]; then
+      /usr/sbin/usermod -L $user
 
-then
+   if [ $user != "sync" ] && [ $user != "shutdown" ] && [ $user != "halt" ]; then
+      /usr/sbin/usermod -s /sbin/nologin $user
 
-/usr/sbin/usermod -L $user
-
-if [ $user != "sync" ] && [ $user != "shutdown" ] && [ $user != "halt" ]
-
-then /usr/sbin/usermod -s /sbin/nologin $user
-
-fi
-
-fi
+   fi
+   fi
 
 done
