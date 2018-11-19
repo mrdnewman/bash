@@ -1,8 +1,9 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-    # What using the swap?
-    # seek_swapUsage.sh
+    # -- What's using the swap?
     # -- Get current swap usage for all running processes
+    # -- seek_swapUsage.sh
+    # -- 
     # --
 
 
