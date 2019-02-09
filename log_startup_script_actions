@@ -1,0 +1,13 @@
+
+
+Capture output of startup script and send them to a log w/o writing line per line of logging. Too much work.
+Instead of creating multiple line to capture data like this ...
+
+echo "runs once on instance startup timestamp=$(date +%Y%m%d%H%M%s%N)" | sudo tee -a "/var/log/startupenv.log"
+
+Do this ...
+# save stdout and stderr to file descriptors 3 and 4, then redirect them to "foo"
+
+exec 3>&1 4>&2 >/var/log/startupenv.log 2>&1
+
+
