@@ -1,0 +1,13 @@
+
+
+# --> Validate Command Execution
+execute () {
+   error=$($2 2>&1 >/dev/null)
+
+   if [ $? -ne 0 ]; then
+      echo "$1: $error"
+      return 1
+   else
+      echo -e "OK\n"
+   fi
+}
