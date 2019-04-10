@@ -3,8 +3,6 @@
     # -- What's using the swap?
     # -- Get current swap usage for all running processes
     # -- seek_swapUsage.sh
-    # -- 
-    # --
 
 
 SCRIPT_NAME=`basename $0`;
