@@ -2,7 +2,7 @@
 
 #==============================================================================
 #title           :eks-bin_Inst.sh
-#description     :This script will make a header for a bash script.
+#description     :This script will install EKS binaries.
 #author          :D. Newman
 #date            :9/8/2019
 #version         :0.1
