@@ -41,7 +41,7 @@ valFun () {
  }
  
  for i in eksctl kubectl aws-iam-authenticator
-do
+ do
    case $i in
         eksctl)
 
