@@ -19,7 +19,7 @@ cleanup() {
 echo connecting to kubernetes control node...
 
 # tunnel local port 6443
-ssh -N -L 6443:127.0.0.1:6443 ec2-user@ec2-18-217-177-192.us-east-2.compute.amazonaws.com &
+ssh -N -L 6443:127.0.0.1:6443 ec2-user@ec2<fqdn> &
 SSH_PID=$!
 
 echo $SSH_PID
