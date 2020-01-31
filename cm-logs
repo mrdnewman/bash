@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+_ns="cert-manager"
+_cmPod=`kubectl get pods -n "$_ns" \
+	| grep "$_ns" | awk 'FNR <= 1' | awk '{ print $1 }'`
+
+kubectl logs $_cmPod -n $_ns
