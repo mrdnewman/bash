@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+_ns="default"
+_extdnsPod=`kubectl get pods -n "$_ns" | grep external-dns \
+        | awk 'FNR <= 1' | awk '{ print $1 }'`
+
+kubectl logs $_extdnsPod -n $_ns
