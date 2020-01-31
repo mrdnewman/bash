@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+_ns="nginx-ingress"
+_nginxPod=`kubectl get pods -n "$_ns" \
+	| grep "$_ns" | awk 'FNR <= 1' | awk '{ print $1 }'`
+
+kubectl logs $_nginxPod -n $_ns
