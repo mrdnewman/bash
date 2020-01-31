@@ -1,0 +1,5 @@
+_ns="kube-system"
+_k2iamPod=`kubectl get pods -n "$_ns" | grep kube2iam \
+	| awk 'FNR <= 1' | awk '{ print $1 }'`
+
+kubectl logs $_k2iamPod -n $_ns
